@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html ng-app="RPS">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Rock Paper Scissors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="#/join">join game</a></li>
+  </ul>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-xs-12 col-md-offset-3">
+        <div ng-view></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="components/angular/angular.min.js"></script>
+  <script src="components/angular-route/angular-route.min.js"></script>
+  <script src="views/join/join.js"></script>
+  <script src="views/play/play.js"></script>
+  <script src="views/lose/lose.js"></script>
+  <script src="views/win/win.js"></script>
+  <script src="services/data-service.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

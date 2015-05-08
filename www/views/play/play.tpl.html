@@ -1,0 +1,36 @@
+<h2>{{ username }}, Take Your Turn</h2>
+<br/>
+<div ng-show="status == 'pick'">
+  <div class="row">
+    <div class="col-xs-4 col-md-3">
+      <button ng-click="pick('rock')"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> rock</button>
+    </div>
+    <div class="col-xs-4 col-md-3">
+      <button ng-click="pick('paper')"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> paper</button>
+    </div>
+    <div class="col-xs-4 col-md-3">
+      <button ng-click="pick('scissors')"><span class="glyphicon glyphicon-scissors" aria-hidden="true"></span> scissors</button>
+    </div>
+  </div>
+  <br/>
+  <h4>Players</h4>
+  <ul>
+    <li ng-repeat="player in players">
+      <span ng-class="{bold: username === player}">{{ player }}</span>
+    </li>
+  </ul>
+</div>
+
+<p ng-show="status == 'wait'">Waiting for the other players to make their choices . . .</p>
+
+<div ng-show="status == 'result'">
+  Here are the results:
+  <ul>
+    <li ng-repeat="player in players">
+      <span ng-class="{bold: username === player}">{{ player }} chose {{ moves[player] }}</span>
+    </li>
+    <li ng-repeat="loser in losers">
+      <span ng-class="{bold: username === loser, strikethrough: true}">{{ loser }} chose {{ moves[loser] }}</span>
+    </li>
+  </ul>
+</div>

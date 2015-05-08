@@ -1,0 +1,18 @@
+<h2>Join the Game</h2>
+<p>Let's play some Rock-Paper-Scissors!</p>
+<br/>
+<p ng-show="loading">Waiting for other users . . .</p>
+<table ng-show="!loading">
+  <tr>
+    <td>Username:</td>
+    <td><input type="text" ng-model="username"><td>
+  </tr>
+  <tr>
+    <td>Minimum players:</td>
+    <td><input type="number" value="2" ng-model="min_players"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="submit" value="join" ng-click="join(username, min_players)"></td>
+  </tr>
+</table>
